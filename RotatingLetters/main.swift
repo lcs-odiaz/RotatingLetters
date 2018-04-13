@@ -9,40 +9,81 @@
 import Foundation
 
 // INPUT
-
 // Loop forever until we get good input
-while 1 == 1 {
+var validInput = "" //outside the loop -- we can use it later on AFTER the loop
+prompt: while 1 == 1 {
     
-    //Prompt the user
+    // Prompt the user
     print("Input word is? ")
     
     // Wait for input
-    // Make sure it is not nil
+    // Test #1: Make sure it is not nil
     guard let givenInput = readLine() else {
         
-        //If we got here, input is nil
+        // If we got here, input is nil
         // Prompt again
-        continue   // continue with the next iteration of while loop
+        continue    // continue with the next iteration of while loop
+        
     }
     
-    //test #2: Is input correct length, too short too long
-    
+    // Test #2: Is the input the correct length
     if givenInput.count < 1 || givenInput.count > 30 {
-        //if we got here, input is too short or too long
-        continue // promt again
+        
+        // If we got here, input is too short or it's too long
+        continue // prompt again
+        
     }
-    // if we got to this//test #2: Is input correct length, too short too long
     
-    if givenInput.count < 1 || givenInput.count > 30 {
-        //if we got here, input is too short or too long
-        continue // promt again
-    }//test #2: Is input correct length, too short too long
+    // Test #3: Check to ensure there is only UPPERCASE letters and no spaces
+    checking: for individualCharacter in givenInput {
+        
+        // DEBUG: Print the character we are looking at
+        print(individualCharacter)
+        
+        // Check the character
+        switch individualCharacter {
+        case "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z":
+            continue checking   // OK, go to iteration of loop that lets us
+        // inspect next character of the input string
+        default:
+            continue prompt     // Stop looking, we've found bad input, so go
+            // to next iteration of loop that lets prompt again
+            // for user input
+        }
     
-    if givenInput.count < 1 || givenInput.count > 30 {
-        //if we got here, input is too short or too long
-        continue // promt again
-    }point, we know theinput is good
-    break //quit the while and begin PROCESS SECTION
+        
+    }
+    // Test #3: Check to ensure there is only UPSIDE DOWN readable letters
+    checking: for individualCharacter in givenInput {
+        
+        // DEBUG: Print the character we are looking at
+        print(individualCharacter)
+        
+        // Check the character
+        switch individualCharacter {
+        case "H", "I", "N", "O", "S", "X", "Z":
+            continue checking   // OK, go to iteration of loop that lets us
+        // inspect next character of the input string
+        default:
+            continue prompt     // Stop looking, we've found bad input, so go
+            // to next iteration of loop that lets prompt again
+            // for user input
+        }
+    
+    // If we got to this point, we know the input is good
+    validInput = givenInput
+    break   // quit the while loop and begin PROCESS section
+    
 }
 
+// PROCESS
+// Now we have valid input that can be processed according to
+// the remaining requirements of the scenario
+print(validInput)
+//is all the idividual letters
+
+
+//Check if all letters in valid imput are vali
+
+}
 
