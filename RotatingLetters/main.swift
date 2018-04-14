@@ -50,25 +50,11 @@ prompt: while 1 == 1 {
             // to next iteration of loop that lets prompt again
             // for user input
         }
-    
+        //ideally, here I would run a similar block of code where
+        //an if statements prints yes is the text has all upsidedown readable letters
         
-    }
-    // Test #3: Check to ensure there is only UPSIDE DOWN readable letters
-    checking: for individualCharacter in givenInput {
-        
-        // DEBUG: Print the character we are looking at
-        print(individualCharacter)
-        
-        // Check the character
-        switch individualCharacter {
-        case "H", "I", "N", "O", "S", "X", "Z":
-            continue checking   // OK, go to iteration of loop that lets us
-        // inspect next character of the input string
-        default:
-            continue prompt     // Stop looking, we've found bad input, so go
-            // to next iteration of loop that lets prompt again
-            // for user input
         }
+    }
     
     // If we got to this point, we know the input is good
     validInput = givenInput
@@ -82,8 +68,9 @@ prompt: while 1 == 1 {
 print(validInput)
 //is all the idividual letters
 
+//if individualCharacter == "I" || "O" || "S" || "H" || "Z" || "X" || "N"{
+//    print("yes")
+//}
+//Check if all letters in valis imput
 
-//Check if all letters in valid imput are vali
-
-}
 
