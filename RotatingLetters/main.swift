@@ -10,7 +10,7 @@ import Foundation
 
 // INPUT
 // Loop forever until we get good input
-var validInput = "" //outside the loop -- we can use it later on AFTER the loop
+var validInput = "" // outside the loop -- we can use it later on AFTER the loop
 prompt: while 1 == 1 {
     
     // Prompt the user
@@ -30,11 +30,12 @@ prompt: while 1 == 1 {
     if givenInput.count < 1 || givenInput.count > 30 {
         
         // If we got here, input is too short or it's too long
-        continue // prompt again
+        continue // prompt againr
         
     }
     
     // Test #3: Check to ensure there is only UPPERCASE letters and no spaces
+    
     checking: for individualCharacter in givenInput {
         
         // DEBUG: Print the character we are looking at
@@ -50,10 +51,6 @@ prompt: while 1 == 1 {
             // to next iteration of loop that lets prompt again
             // for user input
         }
-        //ideally, here I would run a similar block of code where
-        //an if statements prints yes is the text has all upsidedown readable letters
-        
-        }
     }
     
     // If we got to this point, we know the input is good
@@ -66,11 +63,33 @@ prompt: while 1 == 1 {
 // Now we have valid input that can be processed according to
 // the remaining requirements of the scenario
 print(validInput)
-//is all the idividual letters
+
+for letter in validInput {
+    print(letter)
+    if letter == "I" || letter == "O" || letter == "S" || letter == "H" || letter == "Z" || letter == "X" || letter == "N" {
+        continue
+    } else {
+        //we know
+        print("NO")
+        exit(0)
+        
+    }
+    
+    
+}
+
+// OUTPUT
+print("YES")
+
 
 //if individualCharacter == "I" || "O" || "S" || "H" || "Z" || "X" || "N"{
 //    print("yes")
 //}
 //Check if all letters in valis imput
+
+//ideally, here I would run a similar block of code where
+//an if statements prints yes is the text has all upsidedown readable letters
+
+
 
 
